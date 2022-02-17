@@ -1,0 +1,11 @@
+
+.cards {
+  margin: 5rem 10%;
+  display: flex;
+  justify-content: space-around;
+  gap: 5%;
+
+  & > * {
+    flex: 1 0 0;
+  }
+}

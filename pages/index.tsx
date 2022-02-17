@@ -9,6 +9,8 @@ const Home: NextPage = () => {
       <TopBar />
       <LandingView />
       <LandingInfoSection />
+
+      <div style={{ height: 800 }}></div>
     </div>
   )
 }
