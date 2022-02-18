@@ -9,13 +9,14 @@ body {
 }
 
 :root {
-  --color-lightest: #f8f8f8;
-  --color-primary: #cccccc; 
-  --color-text: rgba(0, 0, 0, 0.83);
+  --color-background-primary: #2B2028;
+  --color-text-emphasized: #B143E5;
+  --color-text-white: #ffffff;
+  --color-primary: #B143E5;
 }
 
-h1 {
-  font-size: 3.5rem;
+svg {
+  display: block;
 }
 
 em {

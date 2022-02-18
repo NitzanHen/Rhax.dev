@@ -2,5 +2,6 @@
     "$schema": "https://json.schemastore.org/agripparc-1.4.json",
     "styling": "scss",
     "postCommand": "code -r <componentPath>",
-    "baseDir": "./components"
+    "baseDir": "./components",
+    "importReact": false
 }
