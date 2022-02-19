@@ -74,3 +74,11 @@ meter {
 :where([draggable="true"]) {
   -webkit-user-drag: element;
 }
+
+svg {
+  display: block;
+}
+
+em {
+  font-style: italic;
+}
