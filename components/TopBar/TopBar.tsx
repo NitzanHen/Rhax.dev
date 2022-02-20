@@ -10,7 +10,7 @@ export const TopBar: React.VFC<TopBarProps> = () => {
 		<header className={classes.header}>
 			<span>Rhax</span>
 			<a href='https://github.com/NitzanHen/rhax' target='_blank' rel="noreferrer">
-				<Icon path={mdiGithub} size={1.5} color='var(--color-text-white)' />
+				<Icon path={mdiGithub} color='var(--color-text-white)' />
 			</a>
 		</header>
 	);
