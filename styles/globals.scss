@@ -13,16 +13,14 @@ body {
   --color-text-emphasized: #b143e5;
   --color-text-white: #ffffff;
   --color-button-primary: #b143e5;
-  --color-button-dark: #640B8E;
+  --color-button-dark: #640b8e;
 
-  --landing-view-max-width: 1500px;
-  --landing-content-max-width: 1400px;
+  --landing-view-max-width: 1400px;
+  --landing-content-max-width: 1200px;
 }
 
 .shadow {
   position: relative;
-  width: 40vh;
-  height: 40vh;
 
   &::before {
     content: "";
@@ -37,4 +35,18 @@ body {
       var(--color-background-primary) 100%
     );
   }
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+}
+
+svg {
+  display: block;
 }

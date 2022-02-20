@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4vh 5vw;
-  gap: 5vh;
+  padding: 10vh 5vw;
+  gap: 12vh;
   max-width: var(--landing-content-max-width);
   width: 100%;
 }
@@ -31,19 +31,22 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 15%;
+  gap: 7vw;
 
   & > article {
     flex: 0 1 60%;
   }
 
   & > aside {
+    position: relative;
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 .more_features {
-  margin: 6vh 0;
   display: flex;
   justify-content: space-around;
   gap: 6%;

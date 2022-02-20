@@ -1,0 +1,6 @@
+.root > code:global(.hljs) {
+  box-shadow: 0 0 40px 16px rgba(172, 52, 229, 0.15);
+  background-color: hsl(316, 15%, 5%);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+}

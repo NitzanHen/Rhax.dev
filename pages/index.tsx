@@ -10,9 +10,9 @@ import { TopBar } from '../components/TopBar';
 const Home: NextPage = () => {
   return (
     <>
-    <Head>
-      <title>Rhax: The magical Functional Progamming library for JavaScript</title>
-    </Head>
+      <Head>
+        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+      </Head>
       <TopBar />
       <LandingView />
       <LandingExamples />

@@ -18,7 +18,6 @@ export const LandingView: React.VFC<LandingViewProps> = () => {
 						<Button>Documentation</Button>
 					</div>
 				</section>
-				{/** @todo image */}
 				<aside className='shadow'>
 				</aside>
 			</div>
