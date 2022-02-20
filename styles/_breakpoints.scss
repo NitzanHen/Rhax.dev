@@ -1,0 +1,12 @@
+$breakpoints: (
+  "phone": 576px,
+  "tablet": 860px,
+  "laptop": 1366px,
+  "desktop": 99999px
+);
+
+$phone: map-get($breakpoints, "phone");
+
+$tablet: map-get($breakpoints, "tablet");
+$laptop: map-get($breakpoints, "laptop");
+$desktop: map-get($breakpoints, "desktop");

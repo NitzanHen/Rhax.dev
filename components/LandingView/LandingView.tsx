@@ -1,11 +1,16 @@
 import clsx from 'clsx';
 import Image from 'next/image';
+import { ScreenSize, useScreenSize } from '../../hook/useScreenSize';
 import { Button } from '../Button';
 import classes from './landing-view.module.scss';
 
 export interface LandingViewProps { }
 
 export const LandingView: React.VFC<LandingViewProps> = () => {
+
+	const screenSize = useScreenSize();
+	console.log(screenSize);
+
 
 	return (
 		<div className={classes.root}>
@@ -18,8 +23,7 @@ export const LandingView: React.VFC<LandingViewProps> = () => {
 						<Button>Documentation</Button>
 					</div>
 				</section>
-				<aside className='shadow'>
-				</aside>
+				<aside className={classes.shadow}></aside>
 			</div>
 		</div>
 	);
