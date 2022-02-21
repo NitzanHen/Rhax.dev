@@ -24,9 +24,6 @@ export const useScreenSize = (...observeSizesArgs: ScreenSize[]): ScreenSize => 
   useEffect(() => {
     const cb = () => setScreenSize(currentScreenSize);
 
-    console.log(observeSizes);
-
-
     const mediaQueries = observeSizes.map(size => window.matchMedia(`(max-width: ${size}px)`));
 
     mediaQueries.forEach(mq => mq.addEventListener('change', cb));
