@@ -24,8 +24,9 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 				<div className={classes.feature}>
 					<article>
 						<h2>What’s Rhax?</h2>
-						<p>Rhax is very nice library yes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis nulla massa, id elementum sem suscipit dignissim. Etiam sodales nisl id libero scelerisque, vel congue lorem porta. Donec id fringilla enim. </p>
-						<p>Curabitur aliquam, nulla nec vehicula bibendum, felis nisi vulputate orci, ut vulputate mauris augue sed risus. Proin blandit volutpat sem id rhoncus. Fusce ut velit et mauris dignissim bibendum. Nunc ut dignissim magna. Nullam at tempor urna. </p>
+						<p>Rhax is a JavaScript utility library whose purpose is to make your day-to-day code <em>fantastic</em>. </p>
+						<p>x</p>
+						<p>By the way, &quot;Rhax&quot; (ῥάξ) is the ancient Greek word for grape 🍇</p>
 					</article>
 					<aside>
 						<CodeBlock>{code}</CodeBlock>
@@ -37,8 +38,8 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 					</aside>
 					<article>
 						<h2>Declarative, Idiomatic &amp; Consice</h2>
-						<p>Phasellus id urna dapibus nisi lobortis vestibulum. Nulla ut maximus felis. Proin ut hendrerit elit. Fusce laoreet sagittis tellus, a tincidunt urna vulputate at. Phasellus eleifend fringilla felis, eu vestibulum risus pellentesque a. Sed magna dui, varius nec enim a, tincidunt malesuada ante. Rhax adopts FP for better code.</p>
-						<p>Integer tincidunt at leo quis iaculis. Sed lorem sem, venenatis egestas blandit non, varius sit amet lectus. Suspendisse lacus ex, tempor vel aliquam vitae, porta id purus. Nam sed pharetra quam, eget blandit dui. Fusce pretium est eu sem porttitor, ac consectetur nunc ultricies. looks like magic</p>
+						<p>We believe JavaScript code is best written in a way that <em>emphasizes your logic and intent</em>. </p>
+						<p>Therefore, Rhax&apos;s utilities are designed to be <strong>declarative</strong>, <strong>idiomatic</strong> and <strong>concise</strong>. They&apos;re aimed to minimize the amount of gray code in your codebase, replacing it with easy-to-read, elegant operations that focus on your logic.</p>
 					</article>
 				</div>
 				<div className={classes.feature}>
@@ -70,7 +71,7 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 					</article>
 					<article>
 						<h2>Easy to pick up</h2>
-						<p>Rhax was designed to be intuitive, and avoids unecessary complexity.</p>
+						<p>Rhax was designed to be intuitive, and is simple to introduce into any codebase.</p>
 					</article>
 					<article>
 						<h2>Modern</h2>
@@ -82,6 +83,6 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 					</article>
 				</div>
 			</div>
-		</section>
+		</section >
 	);
 };
