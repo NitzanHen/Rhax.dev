@@ -1,3 +1,4 @@
+@use "../../styles/breakpoints";
 
 .root {
   display: flex;
@@ -21,8 +22,11 @@
 
 .actions {
   display: flex;
-  align-items: center;
   gap: 4rem;
+
+  @media (max-width: breakpoints.$phone) {
+    gap: 2rem;
+  }
 }
 
 .action {

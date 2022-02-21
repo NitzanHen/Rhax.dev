@@ -44,8 +44,9 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 				<div className={classes.feature}>
 					<article>
 						<h2>Functional Programming made practical</h2>
-						<p>Rhax is very nice library yes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis nulla massa, id elementum sem suscipit dignissim. Etiam sodales nisl id libero scelerisque, vel congue lorem porta. Donec id fringilla enim. </p>
-						<p>Integer tincidunt at leo quis iaculis. Sed lorem sem, venenatis egestas blandit non, varius sit amet lectus. Suspendisse lacus ex, tempor vel aliquam vitae, porta id purus. Nam sed pharetra quam, eget blandit dui. Fusce pretium est eu sem porttitor, ac consectetur nunc ultricies. looks like magic</p>
+						<p>Rhax takes a non-traditional approach to functional programming: <em><strong>simplicity</strong></em>.</p>
+						<p>It&apos;s designed to utilize the best of FP - <strong>purity</strong>, <strong>immutability</strong> and <strong>declarative code</strong> - while keeping the paradigm&apos;s infamous learning curve out. </p>
+						<p>This means Rhax has <em>no unnecessarily complex concepts</em>, <em>no ocean of jargon</em>, and <em>no surrendering your codebase to the paradigm</em>.</p>
 					</article>
 					<aside>
 						<CodeBlock>{code}</CodeBlock>

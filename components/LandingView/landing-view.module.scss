@@ -17,14 +17,14 @@
 }
 
 .content > section {
-  flex: 0 0 55%;
+  flex: 1 0 55%;
+
+  @media (min-width: breakpoints.$laptop) {
+    max-width: 65%;
+  }
 
   & p {
     font-size: 2.5rem;
-  }
-
-  @media (max-width: breakpoints.$tablet) {
-    flex: 0 0 100%;
   }
 }
 

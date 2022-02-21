@@ -1,3 +1,4 @@
+@use "../../styles/breakpoints";
 
 .root {
   background-color: var(--color-background-primary);
@@ -11,7 +12,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 10vh 5vw;
-  gap: 12vh;
+  gap: 6rem;
   max-width: var(--landing-content-max-width);
   width: 100%;
 }
@@ -26,7 +27,6 @@
   margin-bottom: 1.5rem;
 }
 
-
 .feature {
   display: flex;
   align-items: center;
@@ -34,7 +34,8 @@
   gap: 7vw;
 
   & > article {
-    flex: 0 1 60%;
+    flex: 1 1 60%;
+    max-width: 75%;
   }
 
   & > aside {
@@ -43,19 +44,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: breakpoints.$tablet) {
+      display: none;
+    }
   }
 }
 
 .more_features {
-  display: flex;
-  justify-content: space-around;
-  gap: 6%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 
-  & > * {
-    flex: 1 0 0;
+  @media (max-width: breakpoints.$tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 
-   & h2 {
-     font-size: 2rem;
-   }
+  & h2 {
+    font-size: 2rem;
+  }
 }
