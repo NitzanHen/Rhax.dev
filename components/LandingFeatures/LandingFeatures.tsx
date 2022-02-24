@@ -25,8 +25,7 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 					<article>
 						<h2>What’s Rhax?</h2>
 						<p>Rhax is a JavaScript utility library whose purpose is to make your day-to-day code <em>fantastic</em>. </p>
-						<p>x</p>
-						<p>By the way, &quot;Rhax&quot; (ῥάξ) is the ancient Greek word for grape 🍇</p>
+						<p>It combines the best bits of functional programming with practicality, brevity, a solid type system and a touch of our <span className={classes.spice}>secret spice</span>.</p>
 					</article>
 					<aside>
 						<CodeBlock>{code}</CodeBlock>

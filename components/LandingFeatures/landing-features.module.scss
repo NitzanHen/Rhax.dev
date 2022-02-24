@@ -1,4 +1,5 @@
 @use "../../styles/breakpoints";
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
 .root {
   background-color: var(--color-background-primary);
@@ -66,4 +67,9 @@
   & h2 {
     font-size: 2rem;
   }
+}
+
+.spice {
+  color: hsl(29, 65%, 55%);
+  font-family: 'Courgette', cursive;
 }
