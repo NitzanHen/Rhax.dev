@@ -1,1 +1,290 @@
-[{"name":"clamp","variants":[{"signature":"clamp(x: number, interval: [min: number, max: number]) => number","comment":"Ensures that `x` is within the given interval.\nIf it isn't, returns the closest bound (`min` if `x < min`, `max` if `max < x`)"},{"signature":"clamp(interval: [min: number, max: number]) => "}],"source":"number/clamp.ts"},{"name":"entries","variants":[{"signature":"entries<O extends object>(obj: O) => EntryOf<O>[]"}],"source":"core/helpers.ts"},{"name":"filter","variants":[{"signature":"filter<E>(arr: E[], predicate: ArrayPredicate<E>) => E[]","comment":"Filters an array using a given predicate.\n\nLike `Array.prototype.filter`, the result is another record, whose entries are the key-value pairs for which the predicate returned `true`."},{"signature":"filter<E>(predicate: ArrayPredicate<E>) => ","comment":"Curried variant of `filter`"}],"source":"core/filter.ts"},{"name":"find","variants":[{"signature":"find<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | ValueOf<O>"}],"source":"core/find.ts"},{"name":"findEntry","variants":[{"signature":"findEntry<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | EntryOf<O>"}],"source":"core/find.ts"},{"name":"findKey","variants":[{"signature":"findKey<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | keyof O"}],"source":"core/find.ts"},{"name":"groupBy","variants":[{"signature":"groupBy<E, T extends ObjectKey>(arr: E[], tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => Record<T, E[]>"},{"signature":"groupBy<E, T extends ObjectKey>(tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => "}],"source":"core/groupBy.ts"},{"name":"indexArray","variants":[{"signature":"indexArray<E, T extends ObjectKey>(arr: E[], indexer: ArrayIndexer<E, T>) => Record<T, E>"},{"signature":"indexArray<E, T extends ObjectKey>(indexer: ArrayIndexer<E, T>) => "}],"source":"core/indexArray.ts"},{"name":"isEmpty","variants":[{"signature":"isEmpty(obj: object) => boolean"}],"source":"core/helpers.ts"},{"name":"keys","variants":[{"signature":"keys<O extends object>(obj: O) => keyof O[]"}],"source":"core/helpers.ts"},{"name":"makeArray","variants":[{"signature":"makeArray<T>(len: number, factory: ) => T[]","comment":"Creates an array with the given length, filled with the elements\nreturned by the factory"}],"source":"core/makeArray.ts"},{"name":"map","variants":[{"signature":"map<E, W>(arr: E[], mapper: ArrayMapper<E, W>) => W[]"},{"signature":"map<E, W>(mapper: ArrayMapper<E, W>) => "}],"source":"core/map.ts"},{"name":"max","variants":[{"signature":"max(numbers: number[]) => number","comment":"Returns the largest value out of the given `numbers`."},{"signature":"max(numbers: number[]) => number"}],"source":"number/max.ts"},{"name":"maxItem","variants":[{"signature":"maxItem<T>(items: T[], toNumber: ) => T","comment":"Returns the item of `items` for which the *maximal* value by `toNumber` is received.\nIf multiple items share the maximal value, the first is returned."},{"signature":"maxItem<T>(toNumber: ) => "}],"source":"number/max.ts"},{"name":"min","variants":[{"signature":"min(numbers: number[]) => number","comment":"Returns the smallest value out of the given `numbers`."},{"signature":"min(numbers: number[]) => number"}],"source":"number/min.ts"},{"name":"minItem","variants":[{"signature":"minItem<T>(items: T[], toNumber: ) => T","comment":"Returns the item of `items` for which the *minimal* value by `toNumber` is received.\nIf multiple items share the minimal value, the first is returned."},{"signature":"minItem<T>(toNumber: ) => "}],"source":"number/min.ts"},{"name":"omit","variants":[{"signature":"omit<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Omit<O, K>"},{"signature":"omit<K extends ObjectKey>(keys: K[]) => "}],"source":"core/omit.ts"},{"name":"pick","variants":[{"signature":"pick<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Pick<O, K>"},{"signature":"pick<K extends ObjectKey>(keys: K[]) => "}],"source":"core/pick.ts"},{"name":"pipe","variants":[{"signature":"pipe() => Pipe<void>"},{"signature":"pipe<T>(x: T) => Pipe<T>"}],"source":"pipe.ts"},{"name":"reduce","variants":[{"signature":"reduce<E, A>(arr: E[], reducer: ArrayReducer<E, A>, initialValue: A) => A"},{"signature":"reduce<E, A>(reducer: ArrayReducer<E, A>, initialValue: A) => "}],"source":"core/reduce.ts"},{"name":"sum","variants":[{"signature":"sum(number: number[]) => number"},{"signature":"sum(numbers: number[]) => number"}],"source":"number/sum.ts"},{"name":"sumItems","variants":[{"signature":"sumItems<T>(toNumber: ) => "},{"signature":"sumItems<T>(items: T[], toNumber: ) => number"}],"source":"number/sum.ts"},{"name":"toObject","variants":[{"signature":"toObject<K extends ObjectKey, V>(entries: [K, V][]) => Record<K, V>"}],"source":"core/helpers.ts"},{"name":"tuple","variants":[{"signature":"tuple<A extends any[]>(args: A) => A","comment":"Creates a tuple containing the given args.\nAt runtime a tuple is simply an array; `tuple`'s purpose is\nto have Typescript treat the data as a tuple type, not an array type.\n\nIn some cases, it could be used to make the programmer's intent clearer."}],"source":"core/helpers.ts"},{"name":"values","variants":[{"signature":"values<O extends object>(obj: O) => ValueOf<O>[]"}],"source":"core/helpers.ts"},{"name":"zip","variants":[{"signature":"zip<T, S>(arr1: T[], arr2: S[]) => [T, S][]"}],"source":"core/zip.ts"}]
+[
+  {
+    "name": "clamp",
+    "variants": [
+      {
+        "signature": "clamp(x: number, interval: [min: number, max: number]) => number",
+        "comment": "Ensures that `x` is within the given interval.\nIf it isn't, returns the closest bound (`min` if `x < min`, `max` if `max < x`)"
+      },
+      {
+        "signature": "clamp(interval: [min: number, max: number]) => (x: number) => number"
+      }
+    ],
+    "source": "number/clamp.ts"
+  },
+  {
+    "name": "entries",
+    "variants": [
+      {
+        "signature": "entries<O extends object>(obj: O) => EntryOf<O>[]"
+      }
+    ],
+    "source": "core/helpers.ts"
+  },
+  {
+    "name": "filter",
+    "variants": [
+      {
+        "signature": "filter<E>(arr: E[], predicate: ArrayPredicate<E>) => E[]",
+        "comment": "Filters an array using a given predicate.\n\nLike `Array.prototype.filter`, the result is another record, whose entries are the key-value pairs for which the predicate returned `true`."
+      },
+      {
+        "signature": "filter<E>(predicate: ArrayPredicate<E>) => (arr: E[]) => E[]",
+        "comment": "Curried variant of `filter`"
+      }
+    ],
+    "source": "core/filter.ts"
+  },
+  {
+    "name": "find",
+    "variants": [
+      {
+        "signature": "find<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | ValueOf<O>"
+      }
+    ],
+    "source": "core/find.ts"
+  },
+  {
+    "name": "findEntry",
+    "variants": [
+      {
+        "signature": "findEntry<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | EntryOf<O>"
+      }
+    ],
+    "source": "core/find.ts"
+  },
+  {
+    "name": "findKey",
+    "variants": [
+      {
+        "signature": "findKey<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | keyof O"
+      }
+    ],
+    "source": "core/find.ts"
+  },
+  {
+    "name": "groupBy",
+    "variants": [
+      {
+        "signature": "groupBy<E, T extends ObjectKey>(arr: E[], tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => Record<T, E[]>"
+      },
+      {
+        "signature": "groupBy<E, T extends ObjectKey>(tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => (arr: E[]) => Record<T, E[]>"
+      }
+    ],
+    "source": "core/groupBy.ts"
+  },
+  {
+    "name": "indexArray",
+    "variants": [
+      {
+        "signature": "indexArray<E, T extends ObjectKey>(arr: E[], indexer: ArrayIndexer<E, T>) => Record<T, E>"
+      },
+      {
+        "signature": "indexArray<E, T extends ObjectKey>(indexer: ArrayIndexer<E, T>) => (arr: E[]) => Record<T, E>"
+      }
+    ],
+    "source": "core/indexArray.ts"
+  },
+  {
+    "name": "isEmpty",
+    "variants": [
+      {
+        "signature": "isEmpty(obj: object) => boolean"
+      }
+    ],
+    "source": "core/helpers.ts"
+  },
+  {
+    "name": "keys",
+    "variants": [
+      {
+        "signature": "keys<O extends object>(obj: O) => keyof O[]"
+      }
+    ],
+    "source": "core/helpers.ts"
+  },
+  {
+    "name": "makeArray",
+    "variants": [
+      {
+        "signature": "makeArray<T>(len: number, factory: (index: number) => T) => T[]",
+        "comment": "Creates an array with the given length, filled with the elements\nreturned by the factory"
+      }
+    ],
+    "source": "core/makeArray.ts"
+  },
+  {
+    "name": "map",
+    "variants": [
+      {
+        "signature": "map<E, W>(arr: E[], mapper: ArrayMapper<E, W>) => W[]"
+      },
+      {
+        "signature": "map<E, W>(mapper: ArrayMapper<E, W>) => (arr: E[]) => W[]"
+      }
+    ],
+    "source": "core/map.ts"
+  },
+  {
+    "name": "max",
+    "variants": [
+      {
+        "signature": "max(numbers: number[]) => number",
+        "comment": "Returns the largest value out of the given `numbers`."
+      },
+      {
+        "signature": "max(numbers: number[]) => number"
+      }
+    ],
+    "source": "number/max.ts"
+  },
+  {
+    "name": "maxItem",
+    "variants": [
+      {
+        "signature": "maxItem<T>(items: T[], toNumber: (it: T) => number) => T",
+        "comment": "Returns the item of `items` for which the *maximal* value by `toNumber` is received.\nIf multiple items share the maximal value, the first is returned."
+      },
+      {
+        "signature": "maxItem<T>(toNumber: (it: T) => number) => (items: T[]) => T"
+      }
+    ],
+    "source": "number/max.ts"
+  },
+  {
+    "name": "min",
+    "variants": [
+      {
+        "signature": "min(numbers: number[]) => number",
+        "comment": "Returns the smallest value out of the given `numbers`."
+      },
+      {
+        "signature": "min(numbers: number[]) => number"
+      }
+    ],
+    "source": "number/min.ts"
+  },
+  {
+    "name": "minItem",
+    "variants": [
+      {
+        "signature": "minItem<T>(items: T[], toNumber: (it: T) => number) => T",
+        "comment": "Returns the item of `items` for which the *minimal* value by `toNumber` is received.\nIf multiple items share the minimal value, the first is returned."
+      },
+      {
+        "signature": "minItem<T>(toNumber: (it: T) => number) => (items: T[]) => T"
+      }
+    ],
+    "source": "number/min.ts"
+  },
+  {
+    "name": "omit",
+    "variants": [
+      {
+        "signature": "omit<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Omit<O, K>"
+      },
+      {
+        "signature": "omit<K extends ObjectKey>(keys: K[]) => <O extends Record<K, any>>(obj: O) => Omit<O, K>"
+      }
+    ],
+    "source": "core/omit.ts"
+  },
+  {
+    "name": "pick",
+    "variants": [
+      {
+        "signature": "pick<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Pick<O, K>"
+      },
+      {
+        "signature": "pick<K extends ObjectKey>(keys: K[]) => <O extends Record<K, any>>(obj: O) => Pick<O, K>"
+      }
+    ],
+    "source": "core/pick.ts"
+  },
+  {
+    "name": "pipe",
+    "variants": [
+      {
+        "signature": "pipe() => Pipe<void>"
+      },
+      {
+        "signature": "pipe<T>(x: T) => Pipe<T>"
+      }
+    ],
+    "source": "pipe.ts"
+  },
+  {
+    "name": "reduce",
+    "variants": [
+      {
+        "signature": "reduce<E, A>(arr: E[], reducer: ArrayReducer<E, A>, initialValue: A) => A"
+      },
+      {
+        "signature": "reduce<E, A>(reducer: ArrayReducer<E, A>, initialValue: A) => (arr: E[]) => A"
+      }
+    ],
+    "source": "core/reduce.ts"
+  },
+  {
+    "name": "sum",
+    "variants": [
+      {
+        "signature": "sum(number: number[]) => number"
+      },
+      {
+        "signature": "sum(numbers: number[]) => number"
+      }
+    ],
+    "source": "number/sum.ts"
+  },
+  {
+    "name": "sumItems",
+    "variants": [
+      {
+        "signature": "sumItems<T>(toNumber: (it: T) => number) => (items: T[]) => number"
+      },
+      {
+        "signature": "sumItems<T>(items: T[], toNumber: (it: T) => number) => number"
+      }
+    ],
+    "source": "number/sum.ts"
+  },
+  {
+    "name": "toObject",
+    "variants": [
+      {
+        "signature": "toObject<K extends ObjectKey, V>(entries: [K, V][]) => Record<K, V>"
+      }
+    ],
+    "source": "core/helpers.ts"
+  },
+  {
+    "name": "tuple",
+    "variants": [
+      {
+        "signature": "tuple<A extends any[]>(args: A) => A",
+        "comment": "Creates a tuple containing the given args.\nAt runtime a tuple is simply an array; `tuple`'s purpose is\nto have Typescript treat the data as a tuple type, not an array type.\n\nIn some cases, it could be used to make the programmer's intent clearer."
+      }
+    ],
+    "source": "core/helpers.ts"
+  },
+  {
+    "name": "values",
+    "variants": [
+      {
+        "signature": "values<O extends object>(obj: O) => ValueOf<O>[]"
+      }
+    ],
+    "source": "core/helpers.ts"
+  },
+  {
+    "name": "zip",
+    "variants": [
+      {
+        "signature": "zip<T, S>(arr1: T[], arr2: S[]) => [T, S][]"
+      }
+    ],
+    "source": "core/zip.ts"
+  }
+]
