@@ -19,7 +19,7 @@ const MinItemPage: NextPage<{ minItem: Module }> = ({ minItem }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - minItem</title>
       </Head>
       <TopBar />
       <ApiPage module={minItem} />

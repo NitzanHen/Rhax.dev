@@ -1,5 +1,5 @@
 import classes from './api-page.module.scss';
-import api, { Module } from '../../rhax.api';
+import { Module } from '../../rhax.api';
 
 export interface ApiPageProps {
 	module: Module

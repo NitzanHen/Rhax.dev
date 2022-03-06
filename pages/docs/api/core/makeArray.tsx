@@ -19,7 +19,7 @@ const MakeArrayPage: NextPage<{ makeArray: Module }> = ({ makeArray }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - makeArray</title>
       </Head>
       <TopBar />
       <ApiPage module={makeArray} />

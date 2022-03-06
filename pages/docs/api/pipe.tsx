@@ -19,7 +19,7 @@ const PipePage: NextPage<{ pipe: Module }> = ({ pipe }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - pipe</title>
       </Head>
       <TopBar />
       <ApiPage module={pipe} />

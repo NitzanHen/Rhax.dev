@@ -19,7 +19,7 @@ const MapPage: NextPage<{ map: Module }> = ({ map }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - map</title>
       </Head>
       <TopBar />
       <ApiPage module={map} />

@@ -19,7 +19,7 @@ const SumItemsPage: NextPage<{ sumItems: Module }> = ({ sumItems }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - sumItems</title>
       </Head>
       <TopBar />
       <ApiPage module={sumItems} />

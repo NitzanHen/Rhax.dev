@@ -5,26 +5,26 @@ import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
 export function getStaticProps() {
-  const isEmpty = exports.find(e => e.name === "isEmpty");
+  const keys = exports.find(e => e.name === "keys");
 
   return {
     props: {
-      isEmpty
+      keys
     }
   };
 }
 
-const IsEmptyPage: NextPage<{ isEmpty: Module }> = ({ isEmpty }) => {
+const KeysPage: NextPage<{ keys: Module }> = ({ keys }) => {
 
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - keys</title>
       </Head>
       <TopBar />
-      <ApiPage module={isEmpty} />
+      <ApiPage module={keys} />
     </>
   );
 };
 
-export default IsEmptyPage;
+export default KeysPage;

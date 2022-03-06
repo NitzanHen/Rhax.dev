@@ -19,7 +19,7 @@ const ClampPage: NextPage<{ clamp: Module }> = ({ clamp }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - clamp</title>
       </Head>
       <TopBar />
       <ApiPage module={clamp} />

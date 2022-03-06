@@ -19,7 +19,7 @@ const ReducePage: NextPage<{ reduce: Module }> = ({ reduce }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - reduce</title>
       </Head>
       <TopBar />
       <ApiPage module={reduce} />

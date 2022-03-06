@@ -19,7 +19,7 @@ const OmitPage: NextPage<{ omit: Module }> = ({ omit }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - omit</title>
       </Head>
       <TopBar />
       <ApiPage module={omit} />

@@ -5,26 +5,26 @@ import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
 export function getStaticProps() {
-  const findEntry = exports.find(e => e.name === "findEntry");
+  const findKey = exports.find(e => e.name === "findKey");
 
   return {
     props: {
-      findEntry
+      findKey
     }
   };
 }
 
-const FindEntryPage: NextPage<{ findEntry: Module }> = ({ findEntry }) => {
+const FindKeyPage: NextPage<{ findKey: Module }> = ({ findKey }) => {
 
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - findKey</title>
       </Head>
       <TopBar />
-      <ApiPage module={findEntry} />
+      <ApiPage module={findKey} />
     </>
   );
 };
 
-export default FindEntryPage;
+export default FindKeyPage;

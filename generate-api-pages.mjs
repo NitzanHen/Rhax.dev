@@ -8,7 +8,7 @@ const apiPagePath = join(__dirname, 'components', 'ApiPage');
 const topBarPath = join(__dirname, 'components', 'TopBar');
 const apiPath = join(__dirname, 'rhax.api');
 
-const api = JSON.parse(await readFileSync('./rhax.api.json'));
+const api = JSON.parse(readFileSync('./rhax.api.json'));
 
 const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
 
@@ -38,7 +38,7 @@ const ${componentName}: NextPage<{ ${name}: Module }> = ({ ${name} }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - ${name}</title>
       </Head>
       <TopBar />
       <ApiPage module={${name}} />
@@ -56,7 +56,7 @@ for (const module of api) {
   const path = join(__dirname, 'pages', 'docs', 'api', source);
   const dir = dirname(path);
 
-  if(existsSync(path)) {
+  if (existsSync(path)) {
     continue;
   }
 

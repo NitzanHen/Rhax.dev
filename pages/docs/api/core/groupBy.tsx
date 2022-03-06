@@ -19,7 +19,7 @@ const GroupByPage: NextPage<{ groupBy: Module }> = ({ groupBy }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - groupBy</title>
       </Head>
       <TopBar />
       <ApiPage module={groupBy} />

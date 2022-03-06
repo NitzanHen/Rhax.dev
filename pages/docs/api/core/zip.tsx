@@ -19,7 +19,7 @@ const ZipPage: NextPage<{ zip: Module }> = ({ zip }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - zip</title>
       </Head>
       <TopBar />
       <ApiPage module={zip} />

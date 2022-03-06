@@ -5,26 +5,26 @@ import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
 export function getStaticProps() {
-  const max = exports.find(e => e.name === "max");
+  const maxItem = exports.find(e => e.name === "maxItem");
 
   return {
     props: {
-      max
+      maxItem
     }
   };
 }
 
-const MaxPage: NextPage<{ max: Module }> = ({ max }) => {
+const MaxItemPage: NextPage<{ maxItem: Module }> = ({ maxItem }) => {
 
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - maxItem</title>
       </Head>
       <TopBar />
-      <ApiPage module={max} />
+      <ApiPage module={maxItem} />
     </>
   );
 };
 
-export default MaxPage;
+export default MaxItemPage;

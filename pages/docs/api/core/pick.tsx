@@ -19,7 +19,7 @@ const PickPage: NextPage<{ pick: Module }> = ({ pick }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - pick</title>
       </Head>
       <TopBar />
       <ApiPage module={pick} />

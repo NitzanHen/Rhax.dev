@@ -19,7 +19,7 @@ const IndexArrayPage: NextPage<{ indexArray: Module }> = ({ indexArray }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - indexArray</title>
       </Head>
       <TopBar />
       <ApiPage module={indexArray} />

@@ -19,7 +19,7 @@ const FilterPage: NextPage<{ filter: Module }> = ({ filter }) => {
   return (
     <>
       <Head>
-        <title>Rhax: The magical Functional Progamming library for JavaScript</title>
+        <title>Rhax docs - filter</title>
       </Head>
       <TopBar />
       <ApiPage module={filter} />
