@@ -68,3 +68,10 @@ button {
 svg {
   display: block;
 }
+
+.button-base {
+  border-radius: 8px;
+  background-color: var(--color-button-primary);
+  color: var(--color-text-white);
+  padding: 1rem 1.75rem;
+}
