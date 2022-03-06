@@ -58,8 +58,9 @@ export const LandingFeatures: React.VFC<LandingFeaturesProps> = () => {
 					</aside>
 					<article>
 						<h2>For TypeScript users, by TypeScript users</h2>
-						<p>Rhax is very nice library yes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis nulla massa, id elementum sem suscipit dignissim. Etiam sodales nisl id libero scelerisque, vel congue lorem porta. Donec id fringilla enim. </p>
-						<p>Integer tincidunt at leo quis iaculis. Sed lorem sem, venenatis egestas blandit non, varius sit amet lectus. Suspendisse lacus ex, tempor vel aliquam vitae, porta id purus. Nam sed pharetra quam, eget blandit dui. Fusce pretium est eu sem porttitor, ac consectetur nunc ultricies. looks like magic</p>
+						<p>One of Rhax&apos;s purposes is to bring users <strong>the best typing Typescript can provide</strong> for common operations.</p>
+						<p>To this end, it <em>uses generics commonly and thoroughly</em>, and provides a <em>great typing experience throughout</em>.</p>
+						<p>Even if you&apos;re not using Typescript, chances are your IDE does - and you can still benefits from Rhax&apos;s rich typing support through its intellisense.</p>
 					</article>
 				</div>
 
