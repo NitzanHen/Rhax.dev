@@ -12,7 +12,7 @@ export const LandingConclusion: React.VFC<LandingConclusionProps> = () => {
 			<div className={classes.content}>
 				<h2>Ready to get started?</h2>
 				<div className={classes.actions}>
-					<Link href='/docs'>
+					<Link href='/docs/getting-started'>
 						<a className={clsx('button-base', classes.action)}>Getting Started</a>
 					</Link>
 					<Link href='/docs'>
