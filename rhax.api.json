@@ -4,10 +4,11 @@
     "variants": [
       {
         "signature": "clamp(x: number, interval: [min: number, max: number]) => number",
-        "comment": "Ensures that `x` is within the given interval.\nIf it isn't, returns the closest bound (`min` if `x < min`, `max` if `max < x`)"
+        "comment": "Ensures that a number is within a given interval.\n\nIf a number `x` is not contained in a given interval `[min, max]`,\n`clamp` returns the closest bound (`min` if `x` < `min`, `max` if `max` < `x`)"
       },
       {
-        "signature": "clamp(interval: [min: number, max: number]) => (x: number) => number"
+        "signature": "clamp(interval: [min: number, max: number]) => (x: number) => number",
+        "comment": "Curried variant of `clamp`."
       }
     ],
     "source": "number/clamp.ts"
@@ -16,7 +17,8 @@
     "name": "entries",
     "variants": [
       {
-        "signature": "entries<O extends object>(obj: O) => EntryOf<O>[]"
+        "signature": "entries<O extends object>(obj: O) => EntryOf<O>[]",
+        "comment": "Typed wrapper for `Object.entries()`."
       }
     ],
     "source": "core/helpers.ts"
@@ -26,7 +28,7 @@
     "variants": [
       {
         "signature": "filter<E>(arr: E[], predicate: ArrayPredicate<E>) => E[]",
-        "comment": "Filters an array using a given predicate.\n\nLike `Array.prototype.filter`, the result is another record, whose entries are the key-value pairs for which the predicate returned `true`."
+        "comment": "Filters an array using a given predicate.\n\nLike `Array.prototype.filter()`, the result is another record, whose entries are the key-value pairs for which the predicate returned `true`."
       },
       {
         "signature": "filter<E>(predicate: ArrayPredicate<E>) => (arr: E[]) => E[]",
@@ -75,22 +77,11 @@
     "source": "core/groupBy.ts"
   },
   {
-    "name": "indexArray",
-    "variants": [
-      {
-        "signature": "indexArray<E, T extends ObjectKey>(arr: E[], indexer: ArrayIndexer<E, T>) => Record<T, E>"
-      },
-      {
-        "signature": "indexArray<E, T extends ObjectKey>(indexer: ArrayIndexer<E, T>) => (arr: E[]) => Record<T, E>"
-      }
-    ],
-    "source": "core/indexArray.ts"
-  },
-  {
     "name": "isEmpty",
     "variants": [
       {
-        "signature": "isEmpty(obj: object) => boolean"
+        "signature": "isEmpty(obj: object) => boolean",
+        "comment": "Checks is an object is empty, i.e. equal to {}.\n\nAn object `o` is considered *empty*, in this context, if (and only if) it has no enumerable keys,\nthat is if `Object.keys(o)` is an empty array."
       }
     ],
     "source": "core/helpers.ts"
@@ -99,7 +90,8 @@
     "name": "keys",
     "variants": [
       {
-        "signature": "keys<O extends object>(obj: O) => keyof O[]"
+        "signature": "keys<O extends object>(obj: O) => keyof O[]",
+        "comment": "Typed wrapper for `Object.keys()`."
       }
     ],
     "source": "core/helpers.ts"
@@ -109,7 +101,7 @@
     "variants": [
       {
         "signature": "makeArray<T>(len: number, factory: (index: number) => T) => T[]",
-        "comment": "Creates an array with the given length, filled with the elements\nreturned by the factory"
+        "comment": "Creates an array with a given length, with elements from a factory function."
       }
     ],
     "source": "core/makeArray.ts"
@@ -118,10 +110,12 @@
     "name": "map",
     "variants": [
       {
-        "signature": "map<E, W>(arr: E[], mapper: ArrayMapper<E, W>) => W[]"
+        "signature": "map<E, W>(arr: E[], mapper: ArrayMapper<E, W>) => W[]",
+        "comment": "Maps an array using a given mapper.\n\nLike `Array.prototype.map()`, the result is another array of the same length, whose elements are determined by `mapper`.\nThat is, for an array `arr`, `map(arr, mappper)` is another array, and its i-th elements\nis evaluated as `mapper(arr[i], i)`."
       },
       {
-        "signature": "map<E, W>(mapper: ArrayMapper<E, W>) => (arr: E[]) => W[]"
+        "signature": "map<E, W>(mapper: ArrayMapper<E, W>) => (arr: E[]) => W[]",
+        "comment": "Curried variant of `map`."
       }
     ],
     "source": "core/map.ts"
@@ -131,7 +125,7 @@
     "variants": [
       {
         "signature": "max(numbers: number[]) => number",
-        "comment": "Returns the largest value out of the given `numbers`."
+        "comment": "Returns the largest number in a given list."
       },
       {
         "signature": "max(numbers: number[]) => number"
@@ -144,10 +138,11 @@
     "variants": [
       {
         "signature": "maxItem<T>(items: T[], toNumber: (it: T) => number) => T",
-        "comment": "Returns the item of `items` for which the *maximal* value by `toNumber` is received.\nIf multiple items share the maximal value, the first is returned."
+        "comment": "Finds, for a given list of items, the item for which the *maximal* value is achieved, as evaluated by a given `toNumber` transformer.\n\n`toNumber` assigns, to each item in a list `items`, a number; this number can be used to compare between two items in the list.\n`maxItem` returns the item in the list for which is assined number is the greatest. If multiple items share the maximal value, the first is returned."
       },
       {
-        "signature": "maxItem<T>(toNumber: (it: T) => number) => (items: T[]) => T"
+        "signature": "maxItem<T>(toNumber: (it: T) => number) => (items: T[]) => T",
+        "comment": "Curried version of `maxItem`."
       }
     ],
     "source": "number/max.ts"
@@ -157,7 +152,7 @@
     "variants": [
       {
         "signature": "min(numbers: number[]) => number",
-        "comment": "Returns the smallest value out of the given `numbers`."
+        "comment": "Returns the smallest number in a given list."
       },
       {
         "signature": "min(numbers: number[]) => number"
@@ -170,10 +165,11 @@
     "variants": [
       {
         "signature": "minItem<T>(items: T[], toNumber: (it: T) => number) => T",
-        "comment": "Returns the item of `items` for which the *minimal* value by `toNumber` is received.\nIf multiple items share the minimal value, the first is returned."
+        "comment": "Finds, for a given list of items, the item for which the *minimal* value is achieved, as evaluated by a given `toNumber` transformer.\n\n`toNumber` assigns, to each item in a list `items`, a number; this number can be used to compare between two items in the list.\n`minItem` returns the item in the list for which is assined number is the greatest. If multiple items share the minimal value, the first is returned."
       },
       {
-        "signature": "minItem<T>(toNumber: (it: T) => number) => (items: T[]) => T"
+        "signature": "minItem<T>(toNumber: (it: T) => number) => (items: T[]) => T",
+        "comment": "Curried version of `minItem`."
       }
     ],
     "source": "number/min.ts"
@@ -182,10 +178,12 @@
     "name": "omit",
     "variants": [
       {
-        "signature": "omit<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Omit<O, K>"
+        "signature": "omit<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Omit<O, K>",
+        "comment": "Omits fields from an object by their keys.\n\nThe result is a *new* object, whose fields are identical to the original object's fields, except for the fields\nwhose keys are passed to `omit` (which are omitted)."
       },
       {
-        "signature": "omit<K extends ObjectKey>(keys: K[]) => <O extends Record<K, any>>(obj: O) => Omit<O, K>"
+        "signature": "omit<K extends ObjectKey>(keys: K[]) => <O extends Record<K, any>>(obj: O) => Omit<O, K>",
+        "comment": "Curried variant of `omit`."
       }
     ],
     "source": "core/omit.ts"
@@ -194,10 +192,12 @@
     "name": "pick",
     "variants": [
       {
-        "signature": "pick<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Pick<O, K>"
+        "signature": "pick<O extends object, K extends string | number | symbol>(obj: O, keys: K[]) => Pick<O, K>",
+        "comment": "Picks fields from an object by their keys, into a new object.\n\nThe result is a *new* object, whose fields are exactly those fields of the original object\nwhose keys were passed to `pick`."
       },
       {
-        "signature": "pick<K extends ObjectKey>(keys: K[]) => <O extends Record<K, any>>(obj: O) => Pick<O, K>"
+        "signature": "pick<K extends ObjectKey>(keys: K[]) => <O extends Record<K, any>>(obj: O) => Pick<O, K>",
+        "comment": "Curried variant of `pick`."
       }
     ],
     "source": "core/pick.ts"
@@ -254,7 +254,8 @@
     "name": "toObject",
     "variants": [
       {
-        "signature": "toObject<K extends ObjectKey, V>(entries: [K, V][]) => Record<K, V>"
+        "signature": "toObject<K extends ObjectKey, V>(entries: [K, V][]) => Record<K, V>",
+        "comment": "Typed wrapper for `Object.fromEntries()`."
       }
     ],
     "source": "core/helpers.ts"
@@ -264,7 +265,7 @@
     "variants": [
       {
         "signature": "tuple<A extends any[]>(args: A) => A",
-        "comment": "Creates a tuple containing the given args.\nAt runtime a tuple is simply an array; `tuple`'s purpose is\nto have Typescript treat the data as a tuple type, not an array type.\n\nIn some cases, it could be used to make the programmer's intent clearer."
+        "comment": "Creates a tuple containing the given args.\n\nAt runtime a \"tuple\" is simply an array; `tuple()`'s purpose is\nto have Typescript treat the data as a tuple type, not an array type.\n\nIn some cases, `tuple()` could be used to make the programmer's intent clearer."
       }
     ],
     "source": "core/helpers.ts"
@@ -273,7 +274,8 @@
     "name": "values",
     "variants": [
       {
-        "signature": "values<O extends object>(obj: O) => ValueOf<O>[]"
+        "signature": "values<O extends object>(obj: O) => ValueOf<O>[]",
+        "comment": "Typed wrapper for `Object.values()`."
       }
     ],
     "source": "core/helpers.ts"
@@ -282,7 +284,8 @@
     "name": "zip",
     "variants": [
       {
-        "signature": "zip<T, S>(arr1: T[], arr2: S[]) => [T, S][]"
+        "signature": "zip<Arrs extends any[][]>(arrs: Arrs) => Zipped<Arrs>[]",
+        "comment": ""
       }
     ],
     "source": "core/zip.ts"

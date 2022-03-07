@@ -21,7 +21,7 @@ const pageTemplate = (name, path) => {
 import Head from 'next/head';
 import { ApiPage } from '${relativePath(path, apiPagePath)}';
 import { TopBar } from '${relativePath(path, topBarPath)}';
-import exports, { Module } from '${relativePath(path, apiPath)}';
+import exports from '${relativePath(path, apiPath)}';
 
 const ${componentName}: NextPage = () => {
   const ${name} = exports.find(e => e.name === "${name}")!;
