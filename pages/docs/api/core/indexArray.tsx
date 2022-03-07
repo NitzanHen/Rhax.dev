@@ -4,17 +4,8 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const indexArray = exports.find(e => e.name === "indexArray");
-
-  return {
-    props: {
-      indexArray
-    }
-  };
-}
-
-const IndexArrayPage: NextPage<{ indexArray: Module }> = ({ indexArray }) => {
+const IndexArrayPage: NextPage = () => {
+  const indexArray = exports.find(e => e.name === "indexArray")!;
 
   return (
     <>

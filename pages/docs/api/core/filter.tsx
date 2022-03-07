@@ -4,17 +4,8 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const filter = exports.find(e => e.name === "filter");
-
-  return {
-    props: {
-      filter
-    }
-  };
-}
-
-const FilterPage: NextPage<{ filter: Module }> = ({ filter }) => {
+const FilterPage: NextPage = () => {
+  const filter = exports.find(e => e.name === "filter")!;
 
   return (
     <>

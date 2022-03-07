@@ -4,17 +4,8 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const pick = exports.find(e => e.name === "pick");
-
-  return {
-    props: {
-      pick
-    }
-  };
-}
-
-const PickPage: NextPage<{ pick: Module }> = ({ pick }) => {
+const PickPage: NextPage = () => {
+  const pick = exports.find(e => e.name === "pick")!;
 
   return (
     <>

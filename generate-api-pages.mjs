@@ -23,17 +23,8 @@ import { ApiPage } from '${relativePath(path, apiPagePath)}';
 import { TopBar } from '${relativePath(path, topBarPath)}';
 import exports, { Module } from '${relativePath(path, apiPath)}';
 
-export function getStaticProps() {
-  const ${name} = exports.find(e => e.name === "${name}");
-
-  return {
-    props: {
-      ${name}
-    }
-  };
-}
-
-const ${componentName}: NextPage<{ ${name}: Module }> = ({ ${name} }) => {
+const ${componentName}: NextPage = () => {
+  const ${name} = exports.find(e => e.name === "${name}")!;
 
   return (
     <>

@@ -4,17 +4,8 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const reduce = exports.find(e => e.name === "reduce");
-
-  return {
-    props: {
-      reduce
-    }
-  };
-}
-
-const ReducePage: NextPage<{ reduce: Module }> = ({ reduce }) => {
+const ReducePage: NextPage = () => {
+  const reduce = exports.find(e => e.name === "reduce")!;
 
   return (
     <>

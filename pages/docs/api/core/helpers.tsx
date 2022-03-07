@@ -4,27 +4,18 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const keys = exports.find(e => e.name === "keys");
-
-  return {
-    props: {
-      keys
-    }
-  };
-}
-
-const KeysPage: NextPage<{ keys: Module }> = ({ keys }) => {
+const IsEmptyPage: NextPage = () => {
+  const isEmpty = exports.find(e => e.name === "isEmpty")!;
 
   return (
     <>
       <Head>
-        <title>Rhax docs - keys</title>
+        <title>Rhax docs - isEmpty</title>
       </Head>
       <TopBar />
-      <ApiPage module={keys} />
+      <ApiPage module={isEmpty} />
     </>
   );
 };
 
-export default KeysPage;
+export default IsEmptyPage;

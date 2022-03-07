@@ -4,27 +4,18 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const findKey = exports.find(e => e.name === "findKey");
-
-  return {
-    props: {
-      findKey
-    }
-  };
-}
-
-const FindKeyPage: NextPage<{ findKey: Module }> = ({ findKey }) => {
+const FindEntryPage: NextPage = () => {
+  const findEntry = exports.find(e => e.name === "findEntry")!;
 
   return (
     <>
       <Head>
-        <title>Rhax docs - findKey</title>
+        <title>Rhax docs - findEntry</title>
       </Head>
       <TopBar />
-      <ApiPage module={findKey} />
+      <ApiPage module={findEntry} />
     </>
   );
 };
 
-export default FindKeyPage;
+export default FindEntryPage;

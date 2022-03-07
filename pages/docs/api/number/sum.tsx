@@ -4,17 +4,8 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const sumItems = exports.find(e => e.name === "sumItems");
-
-  return {
-    props: {
-      sumItems
-    }
-  };
-}
-
-const SumItemsPage: NextPage<{ sumItems: Module }> = ({ sumItems }) => {
+const SumItemsPage: NextPage = () => {
+  const sumItems = exports.find(e => e.name === "sumItems")!;
 
   return (
     <>

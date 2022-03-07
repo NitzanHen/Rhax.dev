@@ -4,17 +4,8 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports, { Module } from '../../../../rhax.api';
 
-export function getStaticProps() {
-  const omit = exports.find(e => e.name === "omit");
-
-  return {
-    props: {
-      omit
-    }
-  };
-}
-
-const OmitPage: NextPage<{ omit: Module }> = ({ omit }) => {
+const OmitPage: NextPage = () => {
+  const omit = exports.find(e => e.name === "omit")!;
 
   return (
     <>
