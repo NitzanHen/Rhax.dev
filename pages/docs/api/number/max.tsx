@@ -4,18 +4,18 @@ import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
 import exports from '../../../../rhax.api';
 
-const MaxItemPage: NextPage = () => {
-  const maxItem = exports.find(e => e.name === "maxItem")!;
+const MaxPage: NextPage = () => {
+  const max = exports.find(e => e.name === "max")!;
 
   return (
     <>
       <Head>
-        <title>Rhax docs - maxItem</title>
+        <title>Rhax docs - max</title>
       </Head>
       <TopBar />
-      <ApiPage module={maxItem} />
+      <ApiPage module={max} />
     </>
   );
 };
 
-export default MaxItemPage;
+export default MaxPage;

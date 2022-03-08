@@ -38,40 +38,15 @@
     "source": "core/filter.ts"
   },
   {
-    "name": "find",
-    "variants": [
-      {
-        "signature": "find<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | ValueOf<O>"
-      }
-    ],
-    "source": "core/find.ts"
-  },
-  {
-    "name": "findEntry",
-    "variants": [
-      {
-        "signature": "findEntry<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | EntryOf<O>"
-      }
-    ],
-    "source": "core/find.ts"
-  },
-  {
-    "name": "findKey",
-    "variants": [
-      {
-        "signature": "findKey<O extends object>(obj: O, query: ObjectQuery<O>) => undefined | keyof O"
-      }
-    ],
-    "source": "core/find.ts"
-  },
-  {
     "name": "groupBy",
     "variants": [
       {
-        "signature": "groupBy<E, T extends ObjectKey>(arr: E[], tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => Record<T, E[]>"
+        "signature": "groupBy<E, T extends ObjectKey>(arr: E[], tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => Record<T, E[]>",
+        "comment": "Groups the elements of an array.\n\n`groupBy` aggregates a given array `arr` by assigning each of its elements a \"tag\", evaluated by a given `tagger`,\nand grouping all elements by their tags. The result is a record whose keys are the tags produced by `tagger`, and for each tag,\nthe corresponding value is an array containing all elements that were assigned this tag."
       },
       {
-        "signature": "groupBy<E, T extends ObjectKey>(tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => (arr: E[]) => Record<T, E[]>"
+        "signature": "groupBy<E, T extends ObjectKey>(tagger: ArrayTagger<E, T>, initialGroups: Record<T, E[]>) => (arr: E[]) => Record<T, E[]>",
+        "comment": "Curried variant of `groupBy`."
       }
     ],
     "source": "core/groupBy.ts"
@@ -206,10 +181,12 @@
     "name": "pipe",
     "variants": [
       {
-        "signature": "pipe() => Pipe<void>"
+        "signature": "pipe() => Pipe<void>",
+        "comment": "Pipes a value through a chain of functions in succession.\n\nTo end the pipeline and get the final result, use `.go()`."
       },
       {
-        "signature": "pipe<T>(x: T) => Pipe<T>"
+        "signature": "pipe<T>(x: T) => Pipe<T>",
+        "comment": "Pipes a value through a chain of functions in succession.\n\nTo end the pipeline and get the final result, use `.go()`."
       }
     ],
     "source": "pipe.ts"
@@ -218,10 +195,12 @@
     "name": "reduce",
     "variants": [
       {
-        "signature": "reduce<E, A>(arr: E[], reducer: ArrayReducer<E, A>, initialValue: A) => A"
+        "signature": "reduce<E, A>(arr: E[], reducer: ArrayReducer<E, A>, initialValue: A) => A",
+        "comment": "Aggregates an array using a given reducer, starting with a given initial value.\n\nLike `Array.prototype.reduce`, this function initializes an accumulator `acc`, initialized to be\nthe passed `initialValue`. Then, it iterates over the given array `arr`, and for each element `e` (at index `i`), it\n\"reduces\" `e` into `acc` by setting `acc = reducer(acc, e, i)`.\n\nUnlike `Array.prototype.reduce`, here the `initialValue` is a *required* argument, as its type is required\nfor `reduce`'s typing, and also to avoid the edge case of trying to reduce an empty array with no initial value\n(in `Array.prototype.reduce`, for example, this causes a TypeError to be thrown)."
       },
       {
-        "signature": "reduce<E, A>(reducer: ArrayReducer<E, A>, initialValue: A) => (arr: E[]) => A"
+        "signature": "reduce<E, A>(reducer: ArrayReducer<E, A>, initialValue: A) => (arr: E[]) => A",
+        "comment": "Curried variant of `reduce`."
       }
     ],
     "source": "core/reduce.ts"
@@ -230,7 +209,8 @@
     "name": "sum",
     "variants": [
       {
-        "signature": "sum(number: number[]) => number"
+        "signature": "sum(numbers: number[]) => number",
+        "comment": "Sums the elements of a given list of numbers."
       },
       {
         "signature": "sum(numbers: number[]) => number"
@@ -242,10 +222,12 @@
     "name": "sumItems",
     "variants": [
       {
-        "signature": "sumItems<T>(toNumber: (it: T) => number) => (items: T[]) => number"
+        "signature": "sumItems<T>(items: T[], toNumber: (it: T) => number) => number",
+        "comment": "Converts a list of items to a list of numbers by a given transformation (`toNumber`), and sums those numbers.\n\n`toNumber` assigns, to each item in a list `items`, a number; these numbers are then summed up, and the result is returned."
       },
       {
-        "signature": "sumItems<T>(items: T[], toNumber: (it: T) => number) => number"
+        "signature": "sumItems<T>(toNumber: (it: T) => number) => (items: T[]) => number",
+        "comment": "Curried variant of `sumItems`."
       }
     ],
     "source": "number/sum.ts"
