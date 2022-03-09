@@ -1,6 +1,9 @@
+import { groupBy } from 'rhax';
 import api from './rhax.api.json';
 
-export interface Module {
+const apiRecord = groupBy(api, e => e.source);
+
+export interface RhaxExport {
 	name: string;
 	source: string;
 	variants: {
@@ -9,4 +12,4 @@ export interface Module {
 	}[]
 }
 
-export default api;
+export default apiRecord as Record<string, RhaxExport[]>;

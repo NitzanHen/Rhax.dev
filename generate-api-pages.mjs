@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { mkdir } from 'fs/promises';
-import { dirname, join, relative } from 'path';
+import { basename, dirname, join, relative } from 'path';
+import { groupBy, keys } from 'rhax';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -8,23 +9,24 @@ const apiPagePath = join(__dirname, 'components', 'ApiPage');
 const topBarPath = join(__dirname, 'components', 'TopBar');
 const apiPath = join(__dirname, 'rhax.api');
 
-const api = JSON.parse(readFileSync('./rhax.api.json'));
+const apiRaw = JSON.parse(readFileSync('./rhax.api.json'));
+const api = groupBy(apiRaw, e => e.source);
 
 const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
 
 const relativePath = (from, to) => relative(from, to).replace(/\\/g, '/');
 
-const pageTemplate = (name, path) => {
+const pageTemplate = (name, source, path) => {
   const componentName = `${capitalize(name)}Page`;
 
   return `import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '${relativePath(path, apiPagePath)}';
 import { TopBar } from '${relativePath(path, topBarPath)}';
-import exports from '${relativePath(path, apiPath)}';
+import api from '${relativePath(path, apiPath)}';
 
 const ${componentName}: NextPage = () => {
-  const ${name} = exports.find(e => e.name === "${name}")!;
+  const exports = api["${source}"];
 
   return (
     <>
@@ -32,7 +34,7 @@ const ${componentName}: NextPage = () => {
         <title>Rhax docs - ${name}</title>
       </Head>
       <TopBar />
-      <ApiPage module={${name}} />
+      <ApiPage source={"${source}"} exports={exports} />
     </>
   );
 };
@@ -42,17 +44,18 @@ export default ${componentName};`;
 
 const writePromises = [];
 
-for (const module of api) {
-  const source = module.source.replace('.ts', '.tsx');
-  const path = join(__dirname, 'pages', 'docs', 'api', source);
+for (const source of keys(api)) {
+  const path = join(__dirname, 'pages', 'docs', 'api', source.replace('.ts', '.tsx'));
   const dir = dirname(path);
+
+  const name = basename(source, '.ts');
 
   if (existsSync(path)) {
     continue;
   }
 
   const promise = mkdir(dir, { recursive: true })
-    .then(() => writeFileSync(path, pageTemplate(module.name, dir)));
+    .then(() => writeFileSync(path, pageTemplate(name, source, dir)));
   writePromises.push(promise);
 }
 

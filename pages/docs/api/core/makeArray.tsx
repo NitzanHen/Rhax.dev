@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
 const MakeArrayPage: NextPage = () => {
-  const makeArray = exports.find(e => e.name === "makeArray")!;
+  const exports = api["core/makeArray.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const MakeArrayPage: NextPage = () => {
         <title>Rhax docs - makeArray</title>
       </Head>
       <TopBar />
-      <ApiPage module={makeArray} />
+      <ApiPage source={"core/makeArray.ts"} exports={exports} />
     </>
   );
 };

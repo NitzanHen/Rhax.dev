@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
 const ReducePage: NextPage = () => {
-  const reduce = exports.find(e => e.name === "reduce")!;
+  const exports = api["core/reduce.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const ReducePage: NextPage = () => {
         <title>Rhax docs - reduce</title>
       </Head>
       <TopBar />
-      <ApiPage module={reduce} />
+      <ApiPage source={"core/reduce.ts"} exports={exports} />
     </>
   );
 };

@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
 const PickPage: NextPage = () => {
-  const pick = exports.find(e => e.name === "pick")!;
+  const exports = api["core/pick.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const PickPage: NextPage = () => {
         <title>Rhax docs - pick</title>
       </Head>
       <TopBar />
-      <ApiPage module={pick} />
+      <ApiPage source={"core/pick.ts"} exports={exports} />
     </>
   );
 };

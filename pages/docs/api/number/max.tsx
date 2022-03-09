@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
 const MaxPage: NextPage = () => {
-  const max = exports.find(e => e.name === "max")!;
+  const exports = api["number/max.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const MaxPage: NextPage = () => {
         <title>Rhax docs - max</title>
       </Head>
       <TopBar />
-      <ApiPage module={max} />
+      <ApiPage source={"number/max.ts"} exports={exports} />
     </>
   );
 };

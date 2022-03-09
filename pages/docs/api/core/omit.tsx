@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
 const OmitPage: NextPage = () => {
-  const omit = exports.find(e => e.name === "omit")!;
+  const exports = api["core/omit.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const OmitPage: NextPage = () => {
         <title>Rhax docs - omit</title>
       </Head>
       <TopBar />
-      <ApiPage module={omit} />
+      <ApiPage source={"core/omit.ts"} exports={exports} />
     </>
   );
 };

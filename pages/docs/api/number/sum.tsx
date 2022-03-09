@@ -2,20 +2,20 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
-const SumItemsPage: NextPage = () => {
-  const sumItems = exports.find(e => e.name === "sumItems")!;
+const SumPage: NextPage = () => {
+  const exports = api["number/sum.ts"];
 
   return (
     <>
       <Head>
-        <title>Rhax docs - sumItems</title>
+        <title>Rhax docs - sum</title>
       </Head>
       <TopBar />
-      <ApiPage module={sumItems} />
+      <ApiPage source={"number/sum.ts"} exports={exports} />
     </>
   );
 };
 
-export default SumItemsPage;
+export default SumPage;

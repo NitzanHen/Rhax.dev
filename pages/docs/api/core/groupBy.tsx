@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
 const GroupByPage: NextPage = () => {
-  const groupBy = exports.find(e => e.name === "groupBy")!;
+  const exports = api["core/groupBy.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const GroupByPage: NextPage = () => {
         <title>Rhax docs - groupBy</title>
       </Head>
       <TopBar />
-      <ApiPage module={groupBy} />
+      <ApiPage source={"core/groupBy.ts"} exports={exports} />
     </>
   );
 };

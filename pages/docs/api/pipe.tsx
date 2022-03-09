@@ -2,10 +2,10 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../components/ApiPage';
 import { TopBar } from '../../../components/TopBar';
-import exports from '../../../rhax.api';
+import api from '../../../rhax.api';
 
 const PipePage: NextPage = () => {
-  const pipe = exports.find(e => e.name === "pipe")!;
+  const exports = api["pipe.ts"];
 
   return (
     <>
@@ -13,7 +13,7 @@ const PipePage: NextPage = () => {
         <title>Rhax docs - pipe</title>
       </Head>
       <TopBar />
-      <ApiPage module={pipe} />
+      <ApiPage source={"pipe.ts"} exports={exports} />
     </>
   );
 };

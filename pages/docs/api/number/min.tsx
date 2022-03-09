@@ -2,20 +2,20 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ApiPage } from '../../../../components/ApiPage';
 import { TopBar } from '../../../../components/TopBar';
-import exports from '../../../../rhax.api';
+import api from '../../../../rhax.api';
 
-const MinItemPage: NextPage = () => {
-  const minItem = exports.find(e => e.name === "minItem")!;
+const MinPage: NextPage = () => {
+  const exports = api["number/min.ts"];
 
   return (
     <>
       <Head>
-        <title>Rhax docs - minItem</title>
+        <title>Rhax docs - min</title>
       </Head>
       <TopBar />
-      <ApiPage module={minItem} />
+      <ApiPage source={"number/min.ts"} exports={exports} />
     </>
   );
 };
 
-export default MinItemPage;
+export default MinPage;
